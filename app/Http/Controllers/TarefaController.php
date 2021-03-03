@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tarefa;
+use App\Models\TipoDeTarefa;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class TarefaController extends Controller
 {
@@ -14,7 +16,10 @@ class TarefaController extends Controller
      */
     public function index()
     {
-        //
+        $tarefas = Tarefa::all();
+        return Inertia::render('Components/Listas/ListaTarefas', [
+            'tarefas' => $tarefas
+        ]);
     }
 
     /**
@@ -24,7 +29,10 @@ class TarefaController extends Controller
      */
     public function create()
     {
-        //
+        $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
+        return Inertia::render('Tarefa/NovaTarefa', [
+            'tipoDeTarefas' => $tipoDeTarefas
+        ]);
     }
 
     /**
@@ -35,7 +43,12 @@ class TarefaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tarefa::create($request->all());
+        $tarefas = Tarefa::all();
+        return Inertia::render('Components/Listas/ListaTarefas', [
+            'tarefas' => $tarefas,
+            'mensagem' => 'Tarefa incluída com sucesso'
+        ]);
     }
 
     /**

@@ -2,11 +2,6 @@
 <div>
   <main>
   <Navbar />
-    <header>
-      <inertia-link href="/">Home</inertia-link>
-      <inertia-link href="/sobre">About</inertia-link>
-      <inertia-link href="/contato">Contact</inertia-link>
-    </header>
 
     <article>
       <slot />
@@ -16,7 +11,7 @@
 </template>
 
 <script>
-import Navbar from '../Components/Estruturas/Navbar'
+import Navbar from '../Pages/Components/Estruturas/Navbar'
   export default {
       components: {
           Navbar

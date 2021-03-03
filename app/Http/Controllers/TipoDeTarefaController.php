@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TipoDeTarefa;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class TipoDeTarefaController extends Controller
 {
@@ -14,7 +15,10 @@ class TipoDeTarefaController extends Controller
      */
     public function index()
     {
-        //
+        $tipoDeTarefas = TipoDeTarefa::all();
+        return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
+            'tipoDeTarefas' => $tipoDeTarefas
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class TipoDeTarefaController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('NovoTipoDeTarefa');
     }
 
     /**

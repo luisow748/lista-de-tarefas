@@ -10,9 +10,11 @@
 <script>
 import Layout from '../Layouts/Layout'
 
+
 export default {
 	 components:{
-          Layout
+          Layout,
+          ListaTarefas
       },
 
 }
