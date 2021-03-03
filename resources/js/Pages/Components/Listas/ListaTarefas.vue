@@ -1,6 +1,6 @@
 <template>
 <layout>
-    <div>
+    <div class="conteudoCentral">
     <h4>Tarefas:</h4>
 
         <b-alert v-if="mensagem" variant="success" show>{{mensagem}}</b-alert>

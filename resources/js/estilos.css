@@ -1,8 +1,28 @@
+body{
+    background: rgb(209, 209, 209);
+}
+.conteudoCentral{
+
+    width: 70%;
+    /* margin-left: 40px;
+    margin-right: 40px; */
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgb(227, 255, 251);
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px 5px rgba(128, 128, 128, 0.246)
+}
+
 /* Tipos de Tarefas */
+
 .conteudoTipoDeTarefas{
     text-align: center;
 }
 /* Tarefas */
+
 .conteudoNovaTarefa{
     text-align: center;
 }
+
