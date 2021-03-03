@@ -17,8 +17,23 @@ body{
 
 /* Tipos de Tarefas */
 
-.conteudoTipoDeTarefas{
-    text-align: center;
+.navTipoDeTarefas{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.itemTipoTarefa{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 8px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    justify-content: space-between;
+    -webkit-box-shadow: 2px 2px 5px 2px rgba(71, 71, 71, 0.146);
+    box-shadow: 2px 2px 5px 2px rgba(71, 71, 71, 0.146);
 }
 /* Tarefas */
 

@@ -9,9 +9,9 @@
         <inertia-link href="/" as="b-nav-item" >
            <b> Tarefas</b>
         </inertia-link>
-        <inertia-link href="/tipo_de_tarefa/inserir" as="b-nav-item" >
-            Inserir / Editar tipo de tarefa
-        </inertia-link>
+        <!-- <inertia-link href="/tipo_de_tarefa/inserir" as="b-nav-item" >
+            Tipo de tarefa
+        </inertia-link> -->
 
 
         </b-navbar-nav>
