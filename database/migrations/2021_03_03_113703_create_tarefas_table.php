@@ -15,6 +15,9 @@ class CreateTarefasTable extends Migration
     {
         Schema::create('tarefas', function (Blueprint $table) {
             $table->id();
+            $table->string('descricao');
+            $table->string('data_limite');
+            $table->foreignId('tipo_de_tarefas_id')->constrained();
             $table->timestamps();
         });
     }

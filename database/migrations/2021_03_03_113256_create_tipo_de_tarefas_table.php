@@ -15,6 +15,7 @@ class CreateTipoDeTarefasTable extends Migration
     {
         Schema::create('tipo_de_tarefas', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
             $table->timestamps();
         });
     }
