@@ -6,14 +6,11 @@
 
         <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-            <b-navbar-form>
-                <inertia-link href="/" as="b-button"
-                size="" class="mr-2 my-sm-0" >
-                    Tarefas
+
+                <inertia-link href="/" as="button"
+                size="" class="horizontal mr-2 my-sm-0" >
+                <span class="text">Tarefas</span>
                 </inertia-link>
-            </b-navbar-form>
-
-
 
 
         </b-navbar-nav>

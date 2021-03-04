@@ -22,11 +22,24 @@
             <div class='itemTipoTarefa' v-for="t in tipoDeTarefas" :key="t.id">
                 {{t.nome}}
 
-                <b-button variant="danger" @click="deletarTipoTarefa(t.id)" size="sm" class="mr-2 my-sm-0" >
+                <b-button variant="danger" @click="$bvModal.show('excluir')" size="sm" class="mr-2 my-sm-0" >
                 Excluir
                 </b-button>
             </div>
         </div>
+
+        <b-modal id="excluir" hide-footer>
+            <template #modal-title>
+            Confirmação de exclusão
+            </template>
+            <div class="d-block text-center">
+            <span>Você deseja realmente excluir este item?</span>
+            </div>
+        <b-button class="mt-2" variant="danger" @click="hideModal">Excluir</b-button>
+      <b-button class="mt-2" variant="secondary" @click="toggleModal">Cancelar</b-button>
+        </b-modal>
+
+
 
     </div>
 </layout>

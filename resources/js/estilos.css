@@ -41,3 +41,86 @@ body{
     text-align: center;
 }
 
+/* Flex Item */
+
+.flex {
+	display: flex;
+}
+.flex-item-1 {
+	flex: 1;
+}
+.item {
+	margin: 2px;
+	text-align: center;
+
+}
+.itemData {
+	margin: 2px;
+	text-align: center;
+    background: rgb(213, 218, 217);
+}
+.itemExcluir{
+    text-align: right;
+    vertical-align:middle;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.container {
+	max-width: 80%;
+    font-size: 1.4em;
+    padding: 0;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+}
+
+/* Botões */
+
+:root {
+    --base-color: rgb(104, 104, 104);
+    --hover-color: rgb(255, 255, 255);
+}
+.horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 6px;
+    margin: 20px;
+    border: 1px solid var(--base-color);
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+  }
+  .horizontal > .text {
+    position: relative;
+    color: transparent;
+    font-weight: 600;
+    background-image: linear-gradient(90deg, var(--hover-color) 0%,
+    var(--hover-color) 50%, var(--base-color) 50%, var(--base-color) 100%);
+    background-repeat: repeat;
+    background-size: 200%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: background-position 500ms;
+  }
+  .horizontal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--base-color);
+    transform-origin: 100% 0;
+    transform: scale3d(0, 1, 1);
+    transition: transform 500ms;
+  }
+  .horizontal:hover .text {
+    background-position: 0 0;
+  }
+  .horizontal:hover::before {
+    transform-origin: 0 0;
+    transform: scale3d(1, 1, 1);
+  }

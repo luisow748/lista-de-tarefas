@@ -22,6 +22,7 @@
         "@inertiajs/inertia-vue": "^0.5.5",
         "bootstrap": "^4.6.0",
         "bootstrap-vue": "^2.21.2",
-        "vue": "^2.6.12"
+        "vue": "^2.6.12",
+        "vue-confirm-dialog": "^1.0.2"
     }
 }

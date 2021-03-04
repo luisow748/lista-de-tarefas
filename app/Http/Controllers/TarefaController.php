@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Tarefa;
 use App\Models\TipoDeTarefa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use App\Services\CriarTarefaService;
 
 class TarefaController extends Controller
 {
@@ -35,15 +37,18 @@ class TarefaController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        Tarefa::create($request->all());
+        $novaTarefa = new CriarTarefaService($request);
+        if(!$novaTarefa)
+        {
+            $tarefas = Tarefa::all();
+            return Inertia::render('Tarefa/ListaTarefas', [
+                'tarefas' => $tarefas,
+                'mensagem' => 'A Tarefa não foi gravada'
+            ]);
+        }
+
         $tarefas = Tarefa::all();
         return Inertia::render('Tarefa/ListaTarefas', [
             'tarefas' => $tarefas,
@@ -51,46 +56,21 @@ class TarefaController extends Controller
         ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Tarefa  $tarefa
-     * @return \Illuminate\Http\Response
-     */
     public function show(Tarefa $tarefa)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Tarefa  $tarefa
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Tarefa $tarefa)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tarefa  $tarefa
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Tarefa $tarefa)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Tarefa  $tarefa
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Tarefa $tarefa)
     {
         //

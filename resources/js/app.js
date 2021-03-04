@@ -2,10 +2,14 @@ require('./bootstrap');
 import { App, plugin } from '@inertiajs/inertia-vue'
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import VueConfirmDialog from 'vue-confirm-dialog'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './estilos.css'
+
+Vue.use(VueConfirmDialog)
+Vue.component('vue-confirm-dialog', VueConfirmDialog.default)
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

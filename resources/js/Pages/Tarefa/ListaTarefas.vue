@@ -5,10 +5,18 @@
 
         <b-alert v-if="mensagem" variant="success" show>{{mensagem}}</b-alert>
 
-        <p v-for="t in tarefas" :key="t.id">
-            {{t.descricao}}<br>
-            {{t.data_limite}}<br>
-        </p>
+        <div v-for="t in tarefas" :key="t.id" class="container flex">
+            <div class="itemData flex-item-1">{{t.data_limite}}</div>
+            <div class="item flex-item-1">{{t.tipo_de_tarefas}}</div>
+            <div class="item flex-item-1">{{t.descricao}}</div>
+            <div class="itemExcluir flex-item-1">
+                <b-button variant="danger" size="sm" class=""
+                @click="confirmaExclusao(t.id)">
+                    Excluir
+                </b-button>
+            </div>
+        </div>
+
     </div>
 </layout>
 </template>
@@ -37,7 +45,28 @@ export default {
         showAlert() {
             this.dismissCountDown = this.dismissSecs
 
+        },
+        confirmaExclusao(idTarefa){
+        this.$confirm(
+            {
+            message: `Tem certeza que deseja excluir a tarefa nº`+idTarefa+`?`,
+            button: {
+                no: 'Cancelar',
+                yes: 'Excluir'
+            },
+            /**
+            * Callback Function
+            * @param {Boolean} confirm
+            */
+            callback: confirm => {
+                if (confirm) {
+                console.log(idTarefa)
+                }
+            }
+            }
+        )
         }
+
     }
 }
 </script>
