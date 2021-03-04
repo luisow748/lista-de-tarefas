@@ -10,6 +10,7 @@ use Inertia\Inertia;
 Route::get('/', [TarefaController::class, 'index']);
 Route::get('/tarefa/inserir', [TarefaController::class, 'create']);
 Route::post('/tarefa/inserir', [TarefaController::class, 'store']);
+Route::delete('tarefa/excluir/{id}', [TarefaController::class, 'destroy']);
 
 Route::get('/tipo_de_tarefa', [TipoDeTarefaController::class, 'index']);
 Route::get('/tipo_de_tarefa/inserir', [TipoDeTarefaController::class, 'create']);

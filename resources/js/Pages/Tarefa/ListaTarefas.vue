@@ -51,8 +51,8 @@ export default {
             {
             message: `Tem certeza que deseja excluir a tarefa nº`+idTarefa+`?`,
             button: {
-                no: 'Cancelar',
-                yes: 'Excluir'
+                yes: 'Excluir',
+                no: 'Cancelar'
             },
             /**
             * Callback Function
@@ -60,7 +60,8 @@ export default {
             */
             callback: confirm => {
                 if (confirm) {
-                console.log(idTarefa)
+                this.$inertia.delete('/tarefa/excluir/'+idTarefa);
+
                 }
             }
             }
