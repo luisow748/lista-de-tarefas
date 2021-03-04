@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 use App\Services\CriarTarefaService;
+use App\Services\AtualizarTarefaService;
 
 class TarefaController extends Controller
 {
@@ -61,9 +62,20 @@ class TarefaController extends Controller
         //
     }
 
-    public function update(Request $request, Tarefa $tarefa)
+    public function update(Request $request, $id)
     {
-        //
+        $tarefaAtualizar = new AtualizarTarefaService($request, $id);
+        if(!$tarefaAtualizar)
+        {
+            $tarefas = Tarefa::all();
+            return Inertia::render('Tarefa/ListaTarefas', [
+                'tarefas' => $tarefas,
+                'mensagem' => 'A Tarefa não foi atualizada'
+            ]);
+        }
+
+        return redirect('/');
+
     }
 
     public function destroy($id)

@@ -6,10 +6,14 @@
         <b-alert v-if="mensagem" variant="success" show>{{mensagem}}</b-alert>
 
         <div v-for="t in tarefas" :key="t.id" class="container flex">
-        <div> <i class="far fa-check-square"></i> </div>
+        <div class='checked'>
+            <toggle-button v-model="t.status" :labels="{checked: 'Ok!', unchecked: ''}" @change="atualizarTarefa(t)"/>
+        </div>
             <div class="itemData flex-item-1">{{t.data_limite}}</div>
             <div class="item flex-item-1">{{t.tipo_de_tarefas}}</div>
+
             <div class="item flex-item-1">{{t.descricao}}</div>
+
             <div class="itemExcluir flex-item-1">
                 <b-button variant="danger" size="sm" class=""
                 @click="confirmaExclusao(t.id)">
@@ -29,7 +33,8 @@ export default {
       return {
         dismissSecs: 10,
         dismissCountDown: 0,
-        showDismissibleAlert: false
+        showDismissibleAlert: false,
+        checked: false
       }
     },
     components:{
@@ -40,12 +45,8 @@ export default {
         mensagem: String
     },
     methods:{
-        countDownChanged(dismissCountDown) {
-            this.dismissCountDown = dismissCountDown
-        },
-        showAlert() {
-            this.dismissCountDown = this.dismissSecs
-
+        atualizarTarefa(tarefa){
+            this.$inertia.post('/tarefa/'+tarefa.id+'/atualizar', tarefa)
         },
         confirmaExclusao(idTarefa){
         this.$confirm(

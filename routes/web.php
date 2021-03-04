@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TarefaController;
 use App\Http\Controllers\TipoDeTarefaController;
+use App\Models\Tarefa;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -10,7 +11,8 @@ use Inertia\Inertia;
 Route::get('/', [TarefaController::class, 'index']);
 Route::get('/tarefa/inserir', [TarefaController::class, 'create']);
 Route::post('/tarefa/inserir', [TarefaController::class, 'store']);
-Route::delete('tarefa/excluir/{id}', [TarefaController::class, 'destroy']);
+Route::delete('/tarefa/excluir/{id}', [TarefaController::class, 'destroy']);
+Route::post('/tarefa/{id}/atualizar', [TarefaController::class, 'update']);
 
 Route::get('/tipo_de_tarefa', [TipoDeTarefaController::class, 'index']);
 Route::get('/tipo_de_tarefa/inserir', [TipoDeTarefaController::class, 'create']);
