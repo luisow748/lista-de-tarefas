@@ -85,6 +85,7 @@ export default {
         },
         limparCampos(){
             this.tarefa = []
+            this.$inertia.get('/')
         }
     },
     created(){

@@ -17,7 +17,7 @@ class TarefaController extends Controller
     public function index()
     {
         $tarefas = Tarefa::all();
-        return Inertia::render('Components/Listas/ListaTarefas', [
+        return Inertia::render('Tarefa/ListaTarefas', [
             'tarefas' => $tarefas
         ]);
     }
@@ -45,7 +45,7 @@ class TarefaController extends Controller
     {
         Tarefa::create($request->all());
         $tarefas = Tarefa::all();
-        return Inertia::render('Components/Listas/ListaTarefas', [
+        return Inertia::render('Tarefa/ListaTarefas', [
             'tarefas' => $tarefas,
             'mensagem' => 'Tarefa incluída com sucesso'
         ]);

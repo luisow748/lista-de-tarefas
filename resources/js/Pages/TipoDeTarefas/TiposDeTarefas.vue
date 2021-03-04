@@ -6,8 +6,13 @@
 
         <div class='navTipoDeTarefas'>
             <div>
-                <b-button variant="primary" size="sm" class="mr-2 my-sm-0" @click="inserirNovoTipo = true">
+                <b-button variant="primary" size="sm" class="mr-2 my-sm-0"
+                @click="inserirNovoTipo = true">
                 + Criar Tipo
+                </b-button>
+                <b-button variant="secondary" size="sm" class="mr-2 my-sm-0"
+                @click="voltarParaInicio">
+                Voltar
                 </b-button>
             </div>
         </div>
@@ -48,6 +53,9 @@ export default {
     methods: {
         deletarTipoTarefa(id){
             this.$inertia.delete('/tipo_de_tarefa/'+id)
+        },
+        voltarParaInicio(){
+            this.$inertia.get('/')
         }
 
     }

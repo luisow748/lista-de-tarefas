@@ -14,8 +14,10 @@
                 </b-form-group>
 
                 <div>
-                    <b-button variant="success" @click="salvarTipoTarefa">Salvar</b-button>
-                    <b-button variant="outline-primary" @click="limparCampos">Cancelar</b-button>
+                    <b-button variant="success"
+                    @click="salvarTipoTarefa">Salvar</b-button>
+                    <b-button variant="outline-primary"
+                    @click="limparCamposEVoltar">Cancelar</b-button>
                 </div>
 
     </div>
@@ -40,8 +42,9 @@ export default {
             console.log(this.tipo)
 
         },
-         limparCampos(){
+         limparCamposEVoltar(){
             this.nome = []
+            this.$inertia.get('/tipo_de_tarefa')
 
         }
     },
