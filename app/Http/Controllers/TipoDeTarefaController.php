@@ -48,12 +48,7 @@ class TipoDeTarefaController extends Controller
             $tipoDeTarefa->save();
         DB::commit();
         // dd($request);
-        $tipoDeTarefas = TipoDeTarefa::all();
-        return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
-            'tipoDeTarefas' => $tipoDeTarefas,
-            'mensagem' => "Tipo inserido com sucesso!",
-            'inserirNovoTipo' => false
-            ]);
+        return redirect('/tipo_de_tarefa');
     }
 
     /**

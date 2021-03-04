@@ -9,7 +9,7 @@
         <div class='checked'>
             <toggle-button v-model="t.status" :labels="{checked: 'Ok!', unchecked: ''}" @change="atualizarTarefa(t)"/>
         </div>
-            <div class="itemData flex-item-1">{{t.data_limite}}</div>
+            <div class="itemData flex-item-1">{{data(t.data_limite)}}</div>
             <div class="item flex-item-1">{{t.tipo_de_tarefas}}</div>
 
             <div class="item flex-item-1">{{t.descricao}}</div>
@@ -32,6 +32,7 @@
 
 <script>
 import Layout from '../../Layouts/Layout'
+import moment from 'moment'
 export default {
     data() {
       return {
@@ -75,7 +76,12 @@ export default {
             }
             }
         )
-        }
+        },
+        data(value){
+         if (value) {
+           return moment(String(value)).format('DD/MM/YYYY')
+          }
+      },
 
     }
 }

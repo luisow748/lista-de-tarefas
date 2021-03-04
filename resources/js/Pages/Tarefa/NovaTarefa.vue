@@ -64,7 +64,7 @@
 
                 <div>
 
-                    <b-button v-if=" modo == 'editar' " variant="success" @click="AtualizarTarefa(t)">Atualizar</b-button>
+                    <b-button v-if=" modo == 'editar' " variant="success" @click="atualizarTarefa(tarefa)">Atualizar</b-button>
                     <b-button v-else variant="success" @click="salvarTarefa">Salvar</b-button>
                     <b-button variant="outline-primary" @click="limparCampos">Cancelar</b-button>
                 </div>

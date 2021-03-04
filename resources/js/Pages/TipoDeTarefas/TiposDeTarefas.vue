@@ -22,22 +22,12 @@
             <div class='itemTipoTarefa' v-for="t in tipoDeTarefas" :key="t.id">
                 {{t.nome}}
 
-                <b-button variant="danger" @click="$bvModal.show('excluir')" size="sm" class="mr-2 my-sm-0" >
-                Excluir
-                </b-button>
+                <b-button class="" size='sm' variant="danger" @click="confirmaExclusao(t.id)">Excluir</b-button>
             </div>
         </div>
 
-        <b-modal id="excluir" hide-footer>
-            <template #modal-title>
-            Confirmação de exclusão
-            </template>
-            <div class="d-block text-center">
-            <span>Você deseja realmente excluir este item?</span>
-            </div>
-        <b-button class="mt-2" variant="danger" @click="hideModal">Excluir</b-button>
-      <b-button class="mt-2" variant="secondary" @click="toggleModal">Cancelar</b-button>
-        </b-modal>
+
+
 
 
 
@@ -48,6 +38,7 @@
 <script>
 import Layout from '../../Layouts/Layout'
 import NovoTipoTarefa from '../TipoDeTarefas/NovoTipoTarefa'
+
 export default {
     data(){
         return {
@@ -56,7 +47,8 @@ export default {
     },
     components:{
         Layout,
-        NovoTipoTarefa
+        NovoTipoTarefa,
+
     },
     props: {
         tipoDeTarefas: Array,
@@ -69,7 +61,28 @@ export default {
         },
         voltarParaInicio(){
             this.$inertia.get('/')
-        }
+        },
+        confirmaExclusao(idTarefa){
+        this.$confirm(
+            {
+            message: `Tem certeza que deseja excluir o tipo de tarefa nº`+idTarefa+`?`,
+            button: {
+                yes: 'Excluir',
+                no: 'Cancelar'
+            },
+            /**
+            * Callback Function
+            * @param {Boolean} confirm
+            */
+            callback: confirm => {
+                if (confirm) {
+                this.$inertia.delete('/tipo_de_tarefa/'+idTarefa);
+
+                }
+            }
+            }
+        )
+        },
 
     }
 }
