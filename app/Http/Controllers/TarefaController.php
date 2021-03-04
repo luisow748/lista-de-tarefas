@@ -75,12 +75,6 @@ class TarefaController extends Controller
     {
         Tarefa::destroy($id);
         return redirect('/');
-        // $tarefas = Tarefa::all();
-        // return Inertia::render('Tarefa/ListaTarefas', [
-        //     'tarefas' => $tarefas
-        // ]);
-
-
 
     }
 }
