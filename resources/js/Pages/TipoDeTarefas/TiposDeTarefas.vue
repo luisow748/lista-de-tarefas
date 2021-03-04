@@ -17,9 +17,9 @@
             <div class='itemTipoTarefa' v-for="t in tipoDeTarefas" :key="t.id">
                 {{t.nome}}
 
-                <inertia-link href="/tarefa/inserir" as="b-button" variant="danger" size="sm" class="mr-2 my-sm-0" >
+                <b-button variant="danger" @click="deletarTipoTarefa(t.id)" size="sm" class="mr-2 my-sm-0" >
                 Excluir
-                </inertia-link>
+                </b-button>
             </div>
         </div>
 
@@ -46,7 +46,9 @@ export default {
         inserirNovoTipo: Boolean
     },
     methods: {
-
+        deletarTipoTarefa(id){
+            this.$inertia.delete('/tipo_de_tarefa/'+id)
+        }
 
     }
 }

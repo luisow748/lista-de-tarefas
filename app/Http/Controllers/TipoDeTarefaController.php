@@ -96,8 +96,14 @@ class TipoDeTarefaController extends Controller
      * @param  \App\Models\TipoDeTarefa  $tipoDeTarefa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TipoDeTarefa $tipoDeTarefa)
+    public function destroy($idTipoDeTarefa)
     {
-        //
+        TipoDeTarefa::destroy($idTipoDeTarefa);
+        $tipoDeTarefas = TipoDeTarefa::all();
+        return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
+            'tipoDeTarefas' => $tipoDeTarefas,
+            'mensagem' => "Tipo deletado com sucesso!",
+            'inserirNovoTipo' => false
+            ]);
     }
 }
