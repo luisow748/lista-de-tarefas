@@ -43,7 +43,7 @@
 
                 <b-form-datepicker id="datepicker-dateformat2" v-model="tarefa.data_limite"
                 :date-format-options="{day: 'numeric', month: 'numeric', year: 'numeric' }"
-                locale="pt-br"></b-form-datepicker>
+                locale="br"></b-form-datepicker>
                 </b-form-group>
                 <div>
                     <b-button variant="success" @click="salvarTarefa">Salvar</b-button>

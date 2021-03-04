@@ -24,11 +24,6 @@ class TarefaController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();

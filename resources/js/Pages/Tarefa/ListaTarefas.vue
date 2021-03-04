@@ -6,6 +6,7 @@
         <b-alert v-if="mensagem" variant="success" show>{{mensagem}}</b-alert>
 
         <div v-for="t in tarefas" :key="t.id" class="container flex">
+        <div> <i class="far fa-check-square"></i> </div>
             <div class="itemData flex-item-1">{{t.data_limite}}</div>
             <div class="item flex-item-1">{{t.tipo_de_tarefas}}</div>
             <div class="item flex-item-1">{{t.descricao}}</div>

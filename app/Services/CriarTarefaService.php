@@ -15,6 +15,7 @@ class CriarTarefaService
         $novaTarefa = new Tarefa();
         $novaTarefa->descricao = $request->descricao;
         $novaTarefa->data_limite = $request->data_limite;
+        $novaTarefa->status = "pendente";
         $novaTarefa->tipo_de_tarefas_id = $request->tipo_de_tarefas_id;
             $tipo = TipoDeTarefa::find($request->tipo_de_tarefas_id);
         $novaTarefa->tipo_de_tarefas = $tipo->nome;
