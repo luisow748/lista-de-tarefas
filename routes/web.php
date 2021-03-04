@@ -13,3 +13,4 @@ Route::post('/tarefa/inserir', [TarefaController::class, 'store']);
 
 Route::get('/tipo_de_tarefa', [TipoDeTarefaController::class, 'index']);
 Route::get('/tipo_de_tarefa/inserir', [TipoDeTarefaController::class, 'create']);
+Route::post('/tipo_de_tarefa/inserir', [TipoDeTarefaController::class, 'store']);

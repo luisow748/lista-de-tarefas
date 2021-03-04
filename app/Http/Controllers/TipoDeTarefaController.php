@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tarefa;
 use App\Models\TipoDeTarefa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class TipoDeTarefaController extends Controller
@@ -17,7 +19,8 @@ class TipoDeTarefaController extends Controller
     {
         $tipoDeTarefas = TipoDeTarefa::all();
         return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
-            'tipoDeTarefas' => $tipoDeTarefas
+            'tipoDeTarefas' => $tipoDeTarefas,
+            'inserirNovoTipo' => false
         ]);
     }
 
@@ -39,7 +42,18 @@ class TipoDeTarefaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::beginTransaction();
+            $tipoDeTarefa = new TipoDeTarefa();
+            $tipoDeTarefa->nome = $request->nome;
+            $tipoDeTarefa->save();
+        DB::commit();
+        // dd($request);
+        $tipoDeTarefas = TipoDeTarefa::all();
+        return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
+            'tipoDeTarefas' => $tipoDeTarefas,
+            'mensagem' => "Tipo inserido com sucesso!",
+            'inserirNovoTipo' => false
+            ]);
     }
 
     /**
