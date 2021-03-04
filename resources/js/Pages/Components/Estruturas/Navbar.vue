@@ -12,9 +12,7 @@
                     Tarefas
                 </inertia-link>
             </b-navbar-form>
-       <!-- <inertia-link href="/" as="b-nav-item" >
-           <b> Tarefas</b>
-        </inertia-link> -->
+
 
 
 
