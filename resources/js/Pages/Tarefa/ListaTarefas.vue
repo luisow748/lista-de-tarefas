@@ -15,8 +15,12 @@
             <div class="item flex-item-1">{{t.descricao}}</div>
 
             <div class="itemExcluir flex-item-1">
+                 <b-button variant="primary" size="sm" class=""
+                    @click="editarTarefa(t)">
+                    Editar
+                </b-button>
                 <b-button variant="danger" size="sm" class=""
-                @click="confirmaExclusao(t.id)">
+                    @click="confirmaExclusao(t.id)">
                     Excluir
                 </b-button>
             </div>
@@ -45,6 +49,9 @@ export default {
         mensagem: String
     },
     methods:{
+        editarTarefa(tarefa){
+            this.$inertia.get('/tarefa/'+tarefa.id+'/atualizar', tarefa)
+        },
         atualizarTarefa(tarefa){
             this.$inertia.post('/tarefa/'+tarefa.id+'/atualizar', tarefa)
         },

@@ -17,7 +17,7 @@ class TipoDeTarefaController extends Controller
      */
     public function index()
     {
-        $tipoDeTarefas = TipoDeTarefa::all();
+        $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
         return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
             'tipoDeTarefas' => $tipoDeTarefas,
             'inserirNovoTipo' => false

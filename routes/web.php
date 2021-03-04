@@ -12,6 +12,7 @@ Route::get('/', [TarefaController::class, 'index']);
 Route::get('/tarefa/inserir', [TarefaController::class, 'create']);
 Route::post('/tarefa/inserir', [TarefaController::class, 'store']);
 Route::delete('/tarefa/excluir/{id}', [TarefaController::class, 'destroy']);
+Route::get('/tarefa/{id}/atualizar', [TarefaController::class, 'edit']);
 Route::post('/tarefa/{id}/atualizar', [TarefaController::class, 'update']);
 
 Route::get('/tipo_de_tarefa', [TipoDeTarefaController::class, 'index']);

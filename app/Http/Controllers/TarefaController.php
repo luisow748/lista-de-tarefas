@@ -57,9 +57,15 @@ class TarefaController extends Controller
         //
     }
 
-    public function edit(Tarefa $tarefa)
+    public function edit($id)
     {
-        //
+        $tarefaAtualizar = Tarefa::find($id);
+        $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
+        return Inertia::render('Tarefa/NovaTarefa', [
+            'tipoDeTarefas' => $tipoDeTarefas,
+            'tarefa' => $tarefaAtualizar,
+            'modo' => 'editar'
+        ]);
     }
 
     public function update(Request $request, $id)
