@@ -3,6 +3,9 @@
 <img src="https://img.shields.io/static/v1?label=npm&message=6.14.11&color=7159c1&style=for-the-badge&logo=ghost"></img>
 <img src="https://img.shields.io/static/v1?label=licença&message=pulses&color=7159c1&style=for-the-badge&logo=ghost"></img>
 
+
+Live demo: http://www.sitesdev.com.br
+
 <h1 align="center"> 🔗 Lista de Tarefas - Pulses</h1>
 
 Tabela de conteúdos
@@ -16,7 +19,7 @@ Tabela de conteúdos
    * [Status](#Status)
    * [Tecnologias](#Tecnologias)
 <!--te-->
-Live demo: http://www.sitesdev.com.br
+
 ## Descrição
 <p id="descricao" align="center">
 Este é um projeto que consiste na criação de uma Lista de Tarefas para que cada colaborador possa controlar suas prioridades diárias. Estas podem ser criadas, editadas, marcadas como concluídas ou alteradas.
