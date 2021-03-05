@@ -4,7 +4,7 @@
 Este é um projeto que consiste na criação de uma Lista de Tarefas para que cada colaborador possa controlar suas prioridades diárias. Estas podem ser criadas, editadas, marcadas como concluídas ou alteradas.
 </p>
 
-## Instalação
+## Dependências para instalação:
 <p align="center">
 Para a instalação em um ambiente de desenvolvimento local, são necessárias duas dependências principais:
 <ul>
@@ -13,11 +13,16 @@ Para a instalação em um ambiente de desenvolvimento local, são necessárias d
 </ul>
 </p>
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalação da Lista de Tarefas:
+<p align="center">
+Após instaladas as duas dependências principais, os próximos passos são:
+<ul>
+    <li>No prompt de comando, digitar o seguinte código: 
+        <code>git clone https://github.com/luisow748/pulses.git</code>
+    </li>
+<li>Composer (<a href="https://getcomposer.org/download/">Instalação do Composer</a>)</li>
+</ul>
+</p>
 
 ## Laravel Sponsors
 
