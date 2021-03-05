@@ -15,6 +15,7 @@ Tabela de conteúdos
    * [Dependências para instalação](#dependencias-para-instalacao)
    * [Instalação da Lista de Tarefas](#instalacao)
    * [Features](#Features)
+   * [Script SQL](#Script)
       
    * [Status](#Status)
    * [Tecnologias](#Tecnologias)
@@ -65,6 +66,11 @@ Após instaladas as duas dependências principais, os próximos passos são:
 
 - [x] Cadastro, alteração e exclusão de Tarefa
 - [x] Cadastro, alteração e exclusão de Tipo de Tarefa
+
+## Script SQL
+
+O Script para criação do Banco de Dados encontra-se na raiz do projeto. <br>
+Arquivo: pulses.sql<br>
 
 
 ## Status
