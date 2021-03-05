@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tarefa;
+
 use App\Models\TipoDeTarefa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -68,9 +68,14 @@ class TipoDeTarefaController extends Controller
      * @param  \App\Models\TipoDeTarefa  $tipoDeTarefa
      * @return \Illuminate\Http\Response
      */
-    public function edit(TipoDeTarefa $tipoDeTarefa)
+    public function edit($id)
     {
-        //
+        $tipoTarefaAtualizar = TipoDeTarefa::find($id);
+        return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
+            'inserirNovoTipo' => true,
+            'tipoTarefaAtualizar' => $tipoTarefaAtualizar,
+            'modo' => 'editar'
+        ]);
     }
 
     /**
