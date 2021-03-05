@@ -1,5 +1,22 @@
 <h1 align="center"> 🔗 Lista de Tarefas - Pulses</h1>
 
+Tabela de conteúdos
+=================
+<!--ts-->
+   * [Descrição](#descricao)
+   * [Tabela de Conteudo](#tabela-de-conteudo)
+   * [Instalação](#instalacao)
+   * [Como usar](#como-usar)
+      * [Pre Requisitos](#pre-requisitos)
+      * [Local files](#local-files)
+      * [Remote files](#remote-files)
+      * [Multiple files](#multiple-files)
+      * [Combo](#combo)
+   * [Tests](#testes)
+   * [Tecnologias](#tecnologias)
+<!--te-->
+
+## descricao
 <p align="center">
 Este é um projeto que consiste na criação de uma Lista de Tarefas para que cada colaborador possa controlar suas prioridades diárias. Estas podem ser criadas, editadas, marcadas como concluídas ou alteradas.
 </p>
@@ -8,8 +25,8 @@ Este é um projeto que consiste na criação de uma Lista de Tarefas para que ca
 <p align="center">
 Para a instalação em um ambiente de desenvolvimento local, são necessárias duas dependências principais:
 <ul>
-<li>Node.js > 10 (<a href="https://nodejs.org/en/">Instalação do Node.js</a>), e</li>
-<li>Composer (<a href="https://getcomposer.org/download/">Instalação do Composer</a>)</li>
+<li>Node.js > 10 (<a href="https://nodejs.org/en/">Instalação do Node.js</a>), </li>
+<li>Composer (<a href="https://getcomposer.org/download/">Instalação do Composer</a>) e</li>
 <li>Servidor XAMPP ( <a href="https://www.apachefriends.org/pt_br/download.html">Instalação do XAMPP</a></li>
 </ul>
 </p>
