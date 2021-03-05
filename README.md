@@ -10,6 +10,7 @@ Para a instalação em um ambiente de desenvolvimento local, são necessárias d
 <ul>
 <li>Node.js > 10 (<a href="https://nodejs.org/en/">Instalação do Node.js</a>), e</li>
 <li>Composer (<a href="https://getcomposer.org/download/">Instalação do Composer</a>)</li>
+<li>Servidor XAMPP ( <a href="https://www.apachefriends.org/pt_br/download.html">Instalação do XAMPP</a></li>
 </ul>
 </p>
 
@@ -20,9 +21,22 @@ Após instaladas as duas dependências principais, os próximos passos são:
     <li>1- No prompt de comando, digitar o seguinte código: <br>
         $<code>git clone https://github.com/luisow748/pulses.git</code><br>
         $<code>cd pulses</code>
+        $<code>npm install</code>
+        $<code>npm run dev</code>
+        $<code>composer install</code>
+        $<code>cp .env.example .env</code>
+        $<code>php artisan key:generate</code>
     </li>
-    <li>
+    <li>2- No arquivo .env gerado, atualizar a seguinte variável 
+    com o valor indicado:<br>
+        <code>DB_DATABASE=pulses</code>
     </li>
+    <li>Iniciar o Servidor XAMPP (Mysql e PHP) (<a href="https://pt.wikihow.com/Iniciar-o-XAMPP-na-Inicializa%C3%A7%C3%A3o-do-Windows">Como inicializar o XAMPP</a></li>
+    <li>3- Novamente no prompt de comando (ainda na pasta pulses), digitar o seguinte código:<br>
+    <code>php artisan migrate:fresh</code><br>
+    <code>php artisan serve</code>
+    </li>
+    <li>4- Pronto. A aplicação pode ser acessada via browser no endereço localhost:8000</li>
 </ul>
 </p>
 
