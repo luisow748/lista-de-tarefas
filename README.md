@@ -20,12 +20,12 @@ Após instaladas as duas dependências principais, os próximos passos são:
 <ul>
     <li>1- No prompt de comando, digitar o seguinte código: <br>
         $<code>git clone https://github.com/luisow748/pulses.git</code><br>
-        $<code>cd pulses</code>
-        $<code>npm install</code>
-        $<code>npm run dev</code>
-        $<code>composer install</code>
-        $<code>cp .env.example .env</code>
-        $<code>php artisan key:generate</code>
+        $<code>cd pulses</code><br>
+        $<code>npm install</code><br>
+        $<code>npm run dev</code><br>
+        $<code>composer install</code><br>
+        $<code>cp .env.example .env</code><br>
+        $<code>php artisan key:generate</code><br>
     </li>
     <li>2- No arquivo .env gerado, atualizar a seguinte variável 
     com o valor indicado:<br>
