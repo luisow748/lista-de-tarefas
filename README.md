@@ -1,5 +1,6 @@
 
-<img src="https://img.shields.io/static/v1?label=Versão&message=1.0.0&color=7159c1&style=for-the-badge&logo=ghost" />
+<img src="https://img.shields.io/static/v1?label=versão&message=1.0.0&color=7159c1&style=for-the-badge&logo=ghost" />
+<img src="https://img.shields.io/static/v1?label=npm&message=6.14.11&color=7159c1&style=for-the-badge&logo=ghost" />
 
 <h1 align="center"> 🔗 Lista de Tarefas - Pulses</h1>
 
