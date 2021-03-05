@@ -1,7 +1,7 @@
 <h1 align="center"> 🔗 Lista de Tarefas - Pulses</h1>
 
 <p align="center">
-Este é um projeto que consiste na criação de uma lista de tarefas para que cada colaborador possa controlar suas prioridades diárias.
+Este é um projeto que consiste na criação de uma Lista de Tarefas para que cada colaborador possa controlar suas prioridades diárias. Estas podem ser criadas, editadas, marcadas como concluídas ou alteradas.
 </p>
 
 ## About Laravel
