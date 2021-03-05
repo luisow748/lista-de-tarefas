@@ -17,7 +17,7 @@ Para a instalação em um ambiente de desenvolvimento local, são necessárias d
 <p align="center">
 Após instaladas as duas dependências principais, os próximos passos são:
 <ul>
-    <li>No prompt de comando, digitar o seguinte código: 
+    <li>No prompt de comando, digitar o seguinte código: <br>
         <code>git clone https://github.com/luisow748/pulses.git</code>
     </li>
 <li>Composer (<a href="https://getcomposer.org/download/">Instalação do Composer</a>)</li>
