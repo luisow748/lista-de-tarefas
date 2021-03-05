@@ -4,7 +4,7 @@ Tabela de conteúdos
 =================
 <!--ts-->
    * [Descrição](#descricao)
-   * [Tabela de Conteudo](#tabela-de-conteudo)
+   * [Dependências para instalação](#dependencias-para-instalacao)
    * [Instalação](#instalacao)
    * [Como usar](#como-usar)
       * [Pre Requisitos](#pre-requisitos)
@@ -16,7 +16,7 @@ Tabela de conteúdos
    * [Tecnologias](#tecnologias)
 <!--te-->
 
-## descricao
+## Descrição
 <p align="center">
 Este é um projeto que consiste na criação de uma Lista de Tarefas para que cada colaborador possa controlar suas prioridades diárias. Estas podem ser criadas, editadas, marcadas como concluídas ou alteradas.
 </p>
