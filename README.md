@@ -4,8 +4,14 @@
 Este é um projeto que consiste na criação de uma Lista de Tarefas para que cada colaborador possa controlar suas prioridades diárias. Estas podem ser criadas, editadas, marcadas como concluídas ou alteradas.
 </p>
 
-## About Laravel
-
+## Instalação
+<p align="center">
+Para a instalação em um ambiente de desenvolvimento local, são necessárias duas dependências principais:
+<ul>
+<li>NPM > 10, e</li>
+<li>Composer </li>
+</ul>
+</p>
 
 ## Learning Laravel
 
