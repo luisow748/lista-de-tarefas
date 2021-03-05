@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Tarefa;
 use App\Models\TipoDeTarefa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use App\Services\CriarTarefaService;
+use App\Services\AtualizarTarefaService;
 
 class TarefaController extends Controller
 {
@@ -17,16 +20,13 @@ class TarefaController extends Controller
     public function index()
     {
         $tarefas = Tarefa::all();
+        $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
         return Inertia::render('Tarefa/ListaTarefas', [
-            'tarefas' => $tarefas
+            'tarefas' => $tarefas,
+            'tipoDeTarefas' => $tipoDeTarefas
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
@@ -35,15 +35,18 @@ class TarefaController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        Tarefa::create($request->all());
+        $novaTarefa = new CriarTarefaService($request);
+        if(!$novaTarefa)
+        {
+            $tarefas = Tarefa::all();
+            return Inertia::render('Tarefa/ListaTarefas', [
+                'tarefas' => $tarefas,
+                'mensagem' => 'A Tarefa não foi gravada'
+            ]);
+        }
+
         $tarefas = Tarefa::all();
         return Inertia::render('Tarefa/ListaTarefas', [
             'tarefas' => $tarefas,
@@ -51,48 +54,48 @@ class TarefaController extends Controller
         ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Tarefa  $tarefa
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Tarefa $tarefa)
+    public function show($tipoDeTarefasId)
     {
-        //
+        $tarefas = Tarefa::where('tipo_de_tarefas_id', $tipoDeTarefasId)
+            ->orderBy('descricao')->get();
+            $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
+        return Inertia::render('Tarefa/ListaTarefas', [
+            'tarefas' => $tarefas,
+            'tipoDeTarefas' => $tipoDeTarefas
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Tarefa  $tarefa
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Tarefa $tarefa)
+    public function edit($id)
     {
-        //
+        $tarefaAtualizar = Tarefa::find($id);
+        $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
+        return Inertia::render('Tarefa/NovaTarefa', [
+            'tipoDeTarefas' => $tipoDeTarefas,
+            'tarefa' => $tarefaAtualizar,
+            'modo' => 'editar'
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tarefa  $tarefa
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Tarefa $tarefa)
+    public function update(Request $request, $id)
     {
-        //
+        $tarefaAtualizar = new AtualizarTarefaService($request, $id);
+        if(!$tarefaAtualizar)
+        {
+            $tarefas = Tarefa::all();
+            return Inertia::render('Tarefa/ListaTarefas', [
+                'tarefas' => $tarefas,
+                'mensagem' => 'A Tarefa não foi atualizada'
+            ]);
+        }
+
+        return redirect('/');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Tarefa  $tarefa
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Tarefa $tarefa)
+    public function destroy($id)
     {
-        //
+        Tarefa::destroy($id);
+        return redirect('/');
+
     }
 }

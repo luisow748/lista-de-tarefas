@@ -2,10 +2,24 @@ require('./bootstrap');
 import { App, plugin } from '@inertiajs/inertia-vue'
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import VueConfirmDialog from 'vue-confirm-dialog'
+import ToggleButton from 'vue-js-toggle-button'
+import moment from 'moment';
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './estilos.css'
+
+
+Vue.filter('formatDate', function(value) {
+    if (value) {
+        return moment(String(value)).format('MM/DD/YYYY hh:mm')
+    }
+});
+
+Vue.use(ToggleButton)
+Vue.use(VueConfirmDialog)
+Vue.component('vue-confirm-dialog', VueConfirmDialog.default)
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

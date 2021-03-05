@@ -7,6 +7,7 @@
       <slot />
     </article>
   </main>
+  <vue-confirm-dialog></vue-confirm-dialog>
 </div>
 </template>
 

@@ -9,7 +9,7 @@ body{
     margin: 0 auto;
     margin-top: 20px;
     padding: 20px;
-    background: rgb(227, 255, 251);
+    background: rgb(255, 255, 255);
     border: 1px solid rgb(209, 209, 209);
     border-radius: 8px;
     box-shadow: 5px 5px 15px 5px rgba(128, 128, 128, 0.246)
@@ -41,3 +41,123 @@ body{
     text-align: center;
 }
 
+/* Flex Item */
+
+.flex {
+	display: flex;
+}
+.flex-item-1 {
+	flex: 1;
+}
+.item {
+	margin: 2px;
+	text-align: center;
+    background: white;
+
+}
+.itemData {
+	/* margin: 2px; */
+	text-align: center;
+    background: transparent;
+    border-radius: 4px;
+}
+.itemExcluir{
+    text-align: right;
+    vertical-align:middle;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.containerPrincipal{
+    max-width: 75%;
+    font-size: 1.1em;
+    /* padding: 8px; */
+	margin: 0 auto;
+    background: rgb(255, 255, 255);
+	border: 1px solid rgb(224, 224, 224);
+    border-radius: 8px;
+    margin-bottom: 4px;
+    box-shadow: 2px 2px 2px 1px rgba(86, 92, 92, 0.445);
+}
+.container {
+	max-width: 85%;
+    font-size: 1.1em;
+    padding-right: 8px;
+	margin: 0 auto;
+    background: rgb(226, 226, 226);
+	border: 1px solid rgb(224, 224, 224);
+    border-radius: 6px;
+    /* margin-bottom: 4px; */
+}
+
+/* Botões */
+.checked{
+    background: rgb(255, 255, 255);
+}
+:root {
+    --base-color: rgb(104, 104, 104);
+    --hover-color: rgb(255, 255, 255);
+}
+.horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 6px;
+    margin: 20px;
+    border: 1px solid var(--base-color);
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+  }
+  .horizontal > .text {
+    position: relative;
+    color: transparent;
+    font-weight: 600;
+    background-image: linear-gradient(90deg, var(--hover-color) 0%,
+    var(--hover-color) 50%, var(--base-color) 50%, var(--base-color) 100%);
+    background-repeat: repeat;
+    background-size: 200%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: background-position 500ms;
+  }
+  .horizontal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--base-color);
+    transform-origin: 100% 0;
+    transform: scale3d(0, 1, 1);
+    transition: transform 500ms;
+  }
+  .horizontal:hover .text {
+    background-position: 0 0;
+  }
+  .horizontal:hover::before {
+    transform-origin: 0 0;
+    transform: scale3d(1, 1, 1);
+  }
+  .selectFiltroTipo{
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      padding-bottom: 20px;
+      max-width: 30%;
+      text-align: center;
+  }
+  .textoInputCentralizado{
+      text-align: center;
+  }
+  .toggleButtonDiv{
+      display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+
+  }

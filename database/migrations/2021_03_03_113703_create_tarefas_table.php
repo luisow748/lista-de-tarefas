@@ -17,7 +17,13 @@ class CreateTarefasTable extends Migration
             $table->id();
             $table->string('descricao');
             $table->string('data_limite');
-            $table->foreignId('tipo_de_tarefas_id')->constrained();
+            $table->string('tipo_de_tarefas');
+            $table->boolean('status')->nullable();
+            $table->unsignedBigInteger('tipo_de_tarefas_id');
+            $table->foreign('tipo_de_tarefas_id')
+                ->references('id')
+                ->on('tipo_de_tarefas')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tarefa;
+
 use App\Models\TipoDeTarefa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +17,7 @@ class TipoDeTarefaController extends Controller
      */
     public function index()
     {
-        $tipoDeTarefas = TipoDeTarefa::all();
+        $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
         return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
             'tipoDeTarefas' => $tipoDeTarefas,
             'inserirNovoTipo' => false
@@ -48,12 +48,7 @@ class TipoDeTarefaController extends Controller
             $tipoDeTarefa->save();
         DB::commit();
         // dd($request);
-        $tipoDeTarefas = TipoDeTarefa::all();
-        return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
-            'tipoDeTarefas' => $tipoDeTarefas,
-            'mensagem' => "Tipo inserido com sucesso!",
-            'inserirNovoTipo' => false
-            ]);
+        return redirect('/tipo_de_tarefa');
     }
 
     /**
@@ -73,9 +68,14 @@ class TipoDeTarefaController extends Controller
      * @param  \App\Models\TipoDeTarefa  $tipoDeTarefa
      * @return \Illuminate\Http\Response
      */
-    public function edit(TipoDeTarefa $tipoDeTarefa)
+    public function edit($id)
     {
-        //
+        $tipoTarefaAtualizar = TipoDeTarefa::find($id);
+        return Inertia::render('TipoDeTarefas/TiposDeTarefas', [
+            'inserirNovoTipo' => true,
+            'tipoTarefaAtualizar' => $tipoTarefaAtualizar,
+            'modo' => 'editar'
+        ]);
     }
 
     /**
