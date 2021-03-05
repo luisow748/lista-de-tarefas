@@ -67,7 +67,7 @@ Após instaladas as duas dependências principais, os próximos passos são:
 - [x] Cadastro, alteração e exclusão de Tarefa
 - [x] Cadastro, alteração e exclusão de Tipo de Tarefa
 
-## Script SQL
+## Script
 
 O Script para criação do Banco de Dados encontra-se na raiz do projeto. <br>
 Arquivo: pulses.sql<br>
