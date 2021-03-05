@@ -9,7 +9,7 @@ body{
     margin: 0 auto;
     margin-top: 20px;
     padding: 20px;
-    background: rgb(227, 255, 251);
+    background: rgb(255, 255, 255);
     border: 1px solid rgb(209, 209, 209);
     border-radius: 8px;
     box-shadow: 5px 5px 15px 5px rgba(128, 128, 128, 0.246)
@@ -52,12 +52,13 @@ body{
 .item {
 	margin: 2px;
 	text-align: center;
+    background: white;
 
 }
 .itemData {
-	margin: 2px;
+	/* margin: 2px; */
 	text-align: center;
-    background: rgb(213, 218, 217);
+    background: transparent;
     border-radius: 4px;
 }
 .itemExcluir{
@@ -67,19 +68,31 @@ body{
     margin-bottom: 4px;
 }
 
-.container {
-	max-width: 80%;
-    font-size: 1.2em;
-    padding: 8px;
+.containerPrincipal{
+    max-width: 75%;
+    font-size: 1.1em;
+    /* padding: 8px; */
 	margin: 0 auto;
+    background: rgb(255, 255, 255);
 	border: 1px solid rgb(224, 224, 224);
     border-radius: 8px;
     margin-bottom: 4px;
+    box-shadow: 2px 2px 2px 1px rgba(86, 92, 92, 0.445);
+}
+.container {
+	max-width: 85%;
+    font-size: 1.1em;
+    padding-right: 8px;
+	margin: 0 auto;
+    background: rgb(226, 226, 226);
+	border: 1px solid rgb(224, 224, 224);
+    border-radius: 6px;
+    /* margin-bottom: 4px; */
 }
 
 /* Botões */
 .checked{
-    padding: 5px;
+    background: rgb(255, 255, 255);
 }
 :root {
     --base-color: rgb(104, 104, 104);
@@ -128,4 +141,12 @@ body{
   .horizontal:hover::before {
     transform-origin: 0 0;
     transform: scale3d(1, 1, 1);
+  }
+  .toggleButtonDiv{
+      display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+
   }

@@ -5,26 +5,31 @@
 
         <b-alert v-if="mensagem" variant="success" show>{{mensagem}}</b-alert>
 
-        <div v-for="t in tarefas" :key="t.id" class="container flex">
-        <div class='checked'>
-            <toggle-button v-model="t.status" :labels="{checked: 'Ok!', unchecked: ''}" @change="atualizarTarefa(t)"/>
-        </div>
-            <div class="itemData flex-item-1">{{data(t.data_limite)}}</div>
-            <div class="item flex-item-1">{{t.tipo_de_tarefas}}</div>
+        <div v-for="t in tarefas" :key="t.id" class="containerPrincipal flex">
+            <div class="toggleButtonDiv flex-item-1">
+                <toggle-button v-model="t.status" :labels="{checked: 'Ok!', unchecked: ''}"
+                @change="atualizarTarefa(t)"/>
+            </div>
 
-            <div class="item flex-item-1">{{t.descricao}}</div>
+            <div class="container flex">
+                <div class="itemData flex-item-1">{{data(t.data_limite)}}</div>
+                <div class="item flex-item-1">{{t.tipo_de_tarefas}}</div>
 
-            <div class="itemExcluir flex-item-1">
-                 <b-button variant="primary" size="sm" class=""
-                    @click="editarTarefa(t)">
-                    Editar
-                </b-button>
-                <b-button variant="danger" size="sm" class=""
-                    @click="confirmaExclusao(t.id)">
-                    Excluir
-                </b-button>
+                <div class="item flex-item-1">{{t.descricao}}</div>
+
+                <div class="itemExcluir flex-item-1">
+                    <b-button variant="primary" size="sm" class=""
+                        @click="editarTarefa(t)">
+                        Editar
+                    </b-button>
+                    <b-button variant="danger" size="sm" class=""
+                        @click="confirmaExclusao(t.id)">
+                        Excluir
+                    </b-button>
+                </div>
             </div>
         </div>
+
 
     </div>
 </layout>
