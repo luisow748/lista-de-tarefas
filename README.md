@@ -17,12 +17,12 @@ Tabela de conteúdos
 <!--te-->
 
 ## Descrição
-<p align="center">
+<p id="descricao" align="center">
 Este é um projeto que consiste na criação de uma Lista de Tarefas para que cada colaborador possa controlar suas prioridades diárias. Estas podem ser criadas, editadas, marcadas como concluídas ou alteradas.
 </p>
 
 ## Dependências para instalação:
-<p align="center">
+<p id="dependencias-para-instalacao" align="center">
 Para a instalação em um ambiente de desenvolvimento local, são necessárias duas dependências principais:
 <ul>
 <li>Node.js > 10 (<a href="https://nodejs.org/en/">Instalação do Node.js</a>), </li>
