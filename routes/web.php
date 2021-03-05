@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [TarefaController::class, 'index']);
+Route::get('/tarefa/{id}', [TarefaController::class, 'show'])
+    ->where('id', '[0-9]+');
+
 Route::get('/tarefa/inserir', [TarefaController::class, 'create']);
 Route::post('/tarefa/inserir', [TarefaController::class, 'store']);
 Route::delete('/tarefa/excluir/{id}', [TarefaController::class, 'destroy']);

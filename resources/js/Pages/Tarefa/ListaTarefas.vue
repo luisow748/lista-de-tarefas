@@ -1,7 +1,20 @@
 <template>
 <layout>
-    <div class="conteudoCentral">
-    <h4>Tarefas:</h4>
+<div class="conteudoCentral">
+<h4>Tarefas:</h4>
+    <div class="selectFiltroTipo">
+        <b-form-select  size="sm" id="tipo-tarefa" v-model="tipoTarefaSelecionada"
+        @change="retornaTarefasPorTipo">
+        <template #first>
+            <b-form-select-option class='textoInputCentralizado' value="" disabled>
+             -- Selecione um Tipo de Tarefa --
+            </b-form-select-option>
+        </template>
+            <b-form-select-option v-for="o in tipoDeTarefas"
+                :value="o.id" :key="o.id">  {{o.nome}}
+            </b-form-select-option>
+        </b-form-select>
+    </div>
 
         <b-alert v-if="mensagem" variant="success" show>{{mensagem}}</b-alert>
 
@@ -31,7 +44,7 @@
         </div>
 
 
-    </div>
+</div>
 </layout>
 </template>
 
@@ -44,7 +57,8 @@ export default {
         dismissSecs: 10,
         dismissCountDown: 0,
         showDismissibleAlert: false,
-        checked: false
+        checked: false,
+        tipoTarefaSelecionada: ''
       }
     },
     components:{
@@ -52,7 +66,8 @@ export default {
     },
     props: {
         tarefas: Array,
-        mensagem: String
+        mensagem: String,
+        tipoDeTarefas: Array
     },
     methods:{
         editarTarefa(tarefa){
@@ -86,7 +101,11 @@ export default {
          if (value) {
            return moment(String(value)).format('DD/MM/YYYY')
           }
-      },
+        },
+        retornaTarefasPorTipo(){
+
+            this.$inertia.get('/tarefa/'+this.tipoTarefaSelecionada)
+        }
 
     }
 }

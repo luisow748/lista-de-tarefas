@@ -20,8 +20,10 @@ class TarefaController extends Controller
     public function index()
     {
         $tarefas = Tarefa::all();
+        $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
         return Inertia::render('Tarefa/ListaTarefas', [
-            'tarefas' => $tarefas
+            'tarefas' => $tarefas,
+            'tipoDeTarefas' => $tipoDeTarefas
         ]);
     }
 
@@ -52,9 +54,15 @@ class TarefaController extends Controller
         ]);
     }
 
-    public function show(Tarefa $tarefa)
+    public function show($tipoDeTarefasId)
     {
-        //
+        $tarefas = Tarefa::where('tipo_de_tarefas_id', $tipoDeTarefasId)
+            ->orderBy('descricao')->get();
+            $tipoDeTarefas = TipoDeTarefa::orderBy('nome')->get();
+        return Inertia::render('Tarefa/ListaTarefas', [
+            'tarefas' => $tarefas,
+            'tipoDeTarefas' => $tipoDeTarefas
+        ]);
     }
 
     public function edit($id)

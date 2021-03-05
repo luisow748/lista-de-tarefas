@@ -142,6 +142,17 @@ body{
     transform-origin: 0 0;
     transform: scale3d(1, 1, 1);
   }
+  .selectFiltroTipo{
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      padding-bottom: 20px;
+      max-width: 30%;
+      text-align: center;
+  }
+  .textoInputCentralizado{
+      text-align: center;
+  }
   .toggleButtonDiv{
       display:flex;
     align-items: center;
