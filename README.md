@@ -72,7 +72,7 @@ Após instaladas as duas dependências principais, os próximos passos são:
 <ul>
     <li><a ref="https://laravel.com/">Laravel 8</a> </li>
     <li><a ref="https://vuejs.org/">Vue.js 2.X</a> </li>
-    <li><a ref="https://inertiajs.com/">Inertia.js</a> </li>
+    <li><a ref="https://inertiajs.com/">Inertia.js V0.8.5</a> </li>
     <li><a ref="https://bootstrap-vue.org/">Bootstrap-Vue V2.21.2</a> </li>
     <li><a ref="https://fontawesome.com/">Font Awesome</a> </li>
 </ul>
