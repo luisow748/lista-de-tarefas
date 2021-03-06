@@ -25,7 +25,10 @@
         <div v-for="t in tarefas" :key="t.id" class="containerPrincipal flex">
             <div class="toggleButtonDiv checked flex-item-1">
                 <toggle-button v-model="t.status" :labels="{checked: 'Ok!', unchecked: ''}"
-                @change="atualizarTarefa(t)"/>
+                @change="atualizarTarefa(t)" id="toggle" />
+                <b-tooltip target="toggle" triggers="hover" placement="bottomleft">
+                    Marca uma tarefa como <b>concluída</b>
+                </b-tooltip>
             </div>
 
             <div class="container flex">

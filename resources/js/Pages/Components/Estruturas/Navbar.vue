@@ -19,14 +19,19 @@
         <b-navbar-nav class="ml-auto">
             <b-nav-form>
             <inertia-link href="/tipo_de_tarefa" as="b-button"
-            size="sm" class="mr-2 my-sm-0" >
+            size="sm" class="mr-2 my-sm-0" id="tiposTarefas">
             Tipos de Tarefas
             </inertia-link>
+            <b-tooltip target="tiposTarefas" triggers="hover">
+                Listar todos os <b>tipos de tarefas</b> cadastrados
+            </b-tooltip>
             <inertia-link href="/tarefa/inserir" as="b-button"
-            size="sm" class="mr-2 my-sm-0" >
+            size="sm" class="mr-2 my-sm-0" id="tarefas">
             + Criar Tarefa
             </inertia-link>
-
+            <b-tooltip target="tarefas" triggers="hover" placement="bottomleft">
+                Cria uma nova <b>tarefa</b>
+            </b-tooltip>
             </b-nav-form>
 
 
