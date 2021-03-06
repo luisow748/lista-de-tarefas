@@ -14,7 +14,7 @@
 <script>
 import Navbar from '../Pages/Components/Estruturas/Navbar'
   export default {
-    title: 'Tarefas',
+    title: 'Lista de Tarefas',
     components: {
           Navbar
     },
