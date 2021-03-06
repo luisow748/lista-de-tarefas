@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [TarefaController::class, 'index']);
+Route::get('/tarefa', [TarefaController::class, 'index']);
 Route::get('/tarefa/{id}', [TarefaController::class, 'show'])
     ->where('id', '[0-9]+');
 

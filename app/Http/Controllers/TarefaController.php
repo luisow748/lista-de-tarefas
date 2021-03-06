@@ -47,11 +47,7 @@ class TarefaController extends Controller
             ]);
         }
 
-        $tarefas = Tarefa::all();
-        return Inertia::render('Tarefa/ListaTarefas', [
-            'tarefas' => $tarefas,
-            'mensagem' => 'Tarefa incluída com sucesso'
-        ]);
+        return redirect('/tarefa')->with('mensagem','tarefa incluída com sucesso');
     }
 
     public function show($tipoDeTarefasId)

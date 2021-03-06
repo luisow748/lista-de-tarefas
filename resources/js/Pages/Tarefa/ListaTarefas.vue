@@ -10,6 +10,10 @@
              -- Selecione um Tipo de Tarefa --
             </b-form-select-option>
         </template>
+
+        <b-form-select-option value="" > Todas
+        </b-form-select-option>
+
             <b-form-select-option v-for="o in tipoDeTarefas"
                 :value="o.id" :key="o.id">  {{o.nome}}
             </b-form-select-option>
