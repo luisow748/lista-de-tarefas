@@ -47,8 +47,12 @@ class TarefaController extends Controller
             ]);
         }
 
+<<<<<<< HEAD
         return redirect('/')->with('mensagem','tarefa incluída com sucesso');
 
+=======
+        return redirect('/tarefa')->with('mensagem','tarefa incluída com sucesso');
+>>>>>>> dev
     }
 
     public function show($tipoDeTarefasId)
