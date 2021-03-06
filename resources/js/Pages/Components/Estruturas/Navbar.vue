@@ -6,12 +6,11 @@
 
         <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-        <inertia-link href="/" as="b-nav-item" >
-           <b> Tarefas</b>
-        </inertia-link>
-        <inertia-link href="/tipo_de_tarefa/inserir" as="b-nav-item" >
-            Inserir / Editar tipo de tarefa
-        </inertia-link>
+
+                <inertia-link href="/" as="button"
+                size="" class="horizontal mr-2 my-sm-0" >
+                <span class="text">Tarefas</span>
+                </inertia-link>
 
 
         </b-navbar-nav>

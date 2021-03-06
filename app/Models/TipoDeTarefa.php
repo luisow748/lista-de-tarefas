@@ -9,7 +9,7 @@ use App\Models\Tarefa;
 class TipoDeTarefa extends Model
 {
     use HasFactory;
-    protected $fillable = ["nome"];
+    protected $fillable = ['nome'];
     public function tarefas()
     {
         return $this->hasMany(Tarefa::class);
