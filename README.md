@@ -3,6 +3,9 @@
 <img src="https://img.shields.io/static/v1?label=npm&message=6.14.11&color=7159c1&style=for-the-badge&logo=ghost"></img>
 <img src="https://img.shields.io/static/v1?label=licença&message=pulses&color=7159c1&style=for-the-badge&logo=ghost"></img>
 
+
+Live demo: http://www.sitesdev.com.br
+
 <h1 align="center"> 🔗 Lista de Tarefas - Pulses</h1>
 
 Tabela de conteúdos
@@ -12,6 +15,7 @@ Tabela de conteúdos
    * [Dependências para instalação](#dependencias-para-instalacao)
    * [Instalação da Lista de Tarefas](#instalacao)
    * [Features](#Features)
+   * [Script SQL](#Script)
       
    * [Status](#Status)
    * [Tecnologias](#Tecnologias)
@@ -62,6 +66,11 @@ Após instaladas as duas dependências principais, os próximos passos são:
 
 - [x] Cadastro, alteração e exclusão de Tarefa
 - [x] Cadastro, alteração e exclusão de Tipo de Tarefa
+
+## Script
+
+O Script para criação do Banco de Dados encontra-se na raiz do projeto. <br>
+Arquivo: pulses.sql<br>
 
 
 ## Status

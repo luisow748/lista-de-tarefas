@@ -23,7 +23,7 @@
         <b-alert v-if="mensagem" variant="success" show>{{mensagem}}</b-alert>
 
         <div v-for="t in tarefas" :key="t.id" class="containerPrincipal flex">
-            <div class="toggleButtonDiv flex-item-1">
+            <div class="toggleButtonDiv checked flex-item-1">
                 <toggle-button v-model="t.status" :labels="{checked: 'Ok!', unchecked: ''}"
                 @change="atualizarTarefa(t)"/>
             </div>
