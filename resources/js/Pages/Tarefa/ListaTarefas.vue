@@ -24,8 +24,9 @@
 
         <div v-for="t in tarefas" :key="t.id" class="containerPrincipal flex">
             <div class="toggleButtonDiv checked flex-item-1">
-                <toggle-button v-model="t.status" :labels="{checked: 'Ok!', unchecked: ''}"
-                @change="atualizarTarefa(t)"/>
+                <toggle-button v-b-tooltip.hover.top title="Mudar o status da tarefa" v-model="t.status"
+                 :labels="{checked: 'Ok!', unchecked: ''}"
+                @change="atualizarTarefa(t)" />
             </div>
 
             <div class="container flex">
@@ -35,11 +36,13 @@
                 <div class="item flex-item-1">{{t.descricao}}</div>
 
                 <div class="itemExcluir flex-item-1">
-                    <b-button variant="primary" size="sm" class=""
+                    <b-button variant="primary" size="sm" class="" v-b-tooltip.hover.top
+                    title="Editar / atualizar os detalhes da tarefa"
                         @click="editarTarefa(t)">
                         Editar
                     </b-button>
-                    <b-button variant="danger" size="sm" class=""
+                    <b-button variant="danger" size="sm" class="" v-b-tooltip.hover.top
+                    title="Excluir a tarefa"
                         @click="confirmaExclusao(t.id)">
                         Excluir
                     </b-button>

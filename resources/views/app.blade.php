@@ -12,5 +12,15 @@
   </head>
   <body>
     @inertia
+
+    <script>
+        export default{
+            head () {
+                return {
+                    title: "Tarefas",
+                }
+            }
+        }
+    </script>
   </body>
 </html>

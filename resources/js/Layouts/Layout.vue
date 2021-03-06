@@ -14,9 +14,10 @@
 <script>
 import Navbar from '../Pages/Components/Estruturas/Navbar'
   export default {
-      components: {
+    title: 'Lista de Tarefas',
+    components: {
           Navbar
-      },
+    },
     props: {
       title: String,
     },

@@ -5,12 +5,13 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import VueConfirmDialog from 'vue-confirm-dialog'
 import ToggleButton from 'vue-js-toggle-button'
 import moment from 'moment';
+import titleMixin from './titleMixin'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './estilos.css'
 
-
+Vue.mixin(titleMixin)
 Vue.filter('formatDate', function(value) {
     if (value) {
         return moment(String(value)).format('MM/DD/YYYY hh:mm')
