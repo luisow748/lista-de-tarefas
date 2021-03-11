@@ -6,7 +6,7 @@
 
 Live demo: http://www.sitesdev.com.br
 
-<h1 align="center"> 🔗 Lista de Tarefas - Pulses</h1>
+<h1 align="center"> 🔗 Lista de Tarefas </h1>
 
 Tabela de conteúdos
 =================
