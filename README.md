@@ -1,7 +1,7 @@
 
 <img src="https://img.shields.io/static/v1?label=versão&message=1.0.0&color=7159c1&style=for-the-badge&logo=ghost"></img>
 <img src="https://img.shields.io/static/v1?label=npm&message=6.14.11&color=7159c1&style=for-the-badge&logo=ghost"></img>
-<img src="https://img.shields.io/static/v1?label=licença&message=mit&color=7159c1&style=for-the-badge&logo=ghost"></img>
+<img src="https://img.shields.io/static/v1?label=licenca&message=mit&color=7159c1&style=for-the-badge&logo=ghost"></img>
 
 
 Live demo: http://www.sitesdev.com.br
