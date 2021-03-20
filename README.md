@@ -42,7 +42,7 @@ Após instaladas as duas dependências principais, os próximos passos são:
 <ul>
     <li>1- No prompt de comando, digitar o seguinte código: <br>
         $<code>git clone https://github.com/luisow748/pulses.git</code><br>
-        $<code>cd pulses</code><br>
+        $<code>cd lista-de-tarefas</code><br>
         $<code>npm install</code><br>
         $<code>npm run dev</code><br>
         $<code>composer install</code><br>
