@@ -23,7 +23,7 @@ Tabela de conteúdos
 
 ## Descrição
 <p id="descricao" align="center">
-Este é um projeto que consiste na criação de uma Lista de Tarefas para que cada colaborador possa controlar suas prioridades diárias. Estas podem ser criadas, editadas, marcadas como concluídas ou alteradas.
+Este é um projeto que consiste na criação de uma Lista de Tarefas para que possam ser controladas prioridades diárias. Estas podem ser criadas, editadas, marcadas como concluídas ou alteradas.
 </p>
 
 ## Dependências para instalação:
